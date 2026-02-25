@@ -1,6 +1,4 @@
-
-
-  <!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <title>My Recipe Collection</title>
@@ -42,13 +40,14 @@
         }
 
         .slide img {
-    width: 100%;
-    max-height: 450px;   /* controls size */
-    object-fit: contain; /* shows full image */
-    border-radius: 20px;
-    cursor: pointer;
-    background: white;   /* makes empty space look clean */
-}
+            width: 100%;
+            max-height: 450px;   /* controls size */
+            object-fit: contain; /* shows full image */
+            border-radius: 20px;
+            cursor: pointer;
+            background: white;   /* makes empty space look clean */
+            transition: transform 0.3s;
+        }
 
         .slide img:hover {
             transform: scale(1.05);
@@ -74,10 +73,11 @@
             padding: 12px 18px;
             font-size: 22px;
             border-radius: 50%;
+            z-index: 10; /* ensures buttons appear above images */
         }
 
-        .prev { left: -60px; }
-        .next { right: -60px; }
+        .prev { left: 10px; }   /* inside container */
+        .next { right: 10px; }  /* inside container */
 
         .prev:hover, .next:hover {
             background-color: #ec7387;
@@ -95,12 +95,11 @@
 
     <h1>🍴 My Recipe Collection 🍹</h1>
 
-
-        <div class="slideshow-container">
+    <div class="slideshow-container">
 
         <div class="slide active">
             <a href="Margarita.html">
-                <img src="margarita.jpg" alt="Classic Margarita">
+                <img src="Margarita.jpg" alt="Classic Margarita">
             </a>
             <h2>Classic Margarita</h2>
         </div>
