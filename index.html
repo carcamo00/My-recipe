@@ -28,11 +28,13 @@
         .slideshow-container {
             position: relative;
             max-width: 500px;
+            height: 450px;   /* fixed height so page doesn’t expand */
             margin: 40px auto;
         }
 
         .slide {
             display: none;
+            height: 100%;   /* ensures slide fills container */
         }
 
         .slide.active {
@@ -41,11 +43,11 @@
 
         .slide img {
             width: 100%;
-            max-height: 450px;   /* controls size */
-            object-fit: contain; /* shows full image */
+            height: 100%;       /* fill container height */
+            object-fit: cover;  /* scale nicely without extra page height */
             border-radius: 20px;
             cursor: pointer;
-            background: white;   /* makes empty space look clean */
+            background: white; 
             transition: transform 0.3s;
         }
 
@@ -76,8 +78,8 @@
             z-index: 10; /* ensures buttons appear above images */
         }
 
-        .prev { left: 10px; }   /* inside container */
-        .next { right: 10px; }  /* inside container */
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
         .prev:hover, .next:hover {
             background-color: #ec7387;
